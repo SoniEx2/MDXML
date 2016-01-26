@@ -1,7 +1,7 @@
 # MDXML
 Markdown Extensible Markup Language
 
-Version: 1.0
+Version: 1.1
 
 Tags
 ----
@@ -24,6 +24,17 @@ Attribute Values are done with markdown H3 headers and must come immediately aft
 
     ## Attribute
     ### AttributeValue
+
+Namespaces
+----------
+
+Namespaces are done with markdown H4 and H5 headers. H4 headers specify tag namespace, H5 headers specify attribute namespace.
+
+    # Tag
+    #### TagNamespace
+    ## Attribute
+    ### AttributeValue
+    ##### AttributeNamespace
 
 Raw Data/CDATA
 --------------
