@@ -169,12 +169,26 @@ A line starting with 4 spaces is a code block. An inner data line starting with 
 Escaping
 --------
 
-As with markdown, escaping can be done with \.
+As with markdown, escaping can be done with `\`.
 
     \    this shows up with 4 spaces in a row
     \# this is not a tag
     \## this is not an attribute
     \`this isn't a comment\`
+
+Unlike markdown, MDXML allows you to use `\n` to insert virtual newlines.
+
+    #Tag\n##Attribute\n###Value\nContent
+
+is equivalent to:
+
+    #Tag
+    ##Attribute
+    ###Value
+    Content
+
+All other escapes are disallowed and should be implicitly unescaped. E.g. `\x` is converted to `x`.
+Note that escapes don't work inside raw data blocks or comments (single-line or multi-line).
 
 Compatibility with XML
 ----------------------
