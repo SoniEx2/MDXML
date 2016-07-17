@@ -6,21 +6,21 @@ Version: 1.1
 Tags
 ----
 
-Tags are done with markdown H1 headers.
+Tags are done with markdown H1 headers. The syntax is a `#` with no free spaces preceding it.
 
     # TagName
 
 Attributes
 ----------
 
-Attributes are done with markdown H2 headers
+Attributes are done with markdown H2 headers. The syntax is `##` with no free spaces preceding it.
 
     ## Attribute
 
 Attribute Values
 ----------------
 
-Attribute Values are done with markdown H3 headers and must come immediately after an attribute
+Attribute Values are done with markdown H3 headers and must come immediately after an attribute. The syntax is `###` with no free spaces preceding it.
 
     ## Attribute
     ### AttributeValue
@@ -28,7 +28,7 @@ Attribute Values are done with markdown H3 headers and must come immediately aft
 Namespaces
 ----------
 
-Namespaces are done with markdown H4 and H5 headers. H4 headers specify tag namespace, H5 headers specify attribute namespace.
+Namespaces are done with markdown H4 and H5 headers. H4 headers specify tag namespace, H5 headers specify attribute namespace. The syntax is `####` with no free spaces preceding it and `#####` with no free spaces preceding it, respectively.
 
     # Tag
     #### TagNamespace
@@ -70,6 +70,8 @@ Inner Data
 Inner Data are done with markdown quote blocks
 
     > this is inner data
+
+The syntax is a `>` with no free spaces preceding it, optionally followed by a single ASCII space or tab character.
 
 Going a depth in is as simple as adding more >. Going one or more depths out requires at least 1 new depth indicator line.
 
@@ -134,7 +136,7 @@ MDXML is case-sensitive.
 Spaces
 ------
 
-As with markdown, leading and trailing spaces are ignored except in a few specific situations.
+As with markdown, leading and trailing spaces are ignored (stripped) except in a few specific situations: (Note: the following examples are for clarification only. Their rules are described in the rest of this document.)
 
     #something
 
@@ -142,11 +144,11 @@ is the same as
 
     #     something
 
-which is the same as
+but is NOT the same as
 
-       #        something
+       # something
 
-A note about raw data and inner data blocks:
+And for mixing raw data and inner data blocks:
 
     >>>>something
 
@@ -171,7 +173,7 @@ Escaping
 
 As with markdown, escaping can be done with `\`.
 
-    \    this shows up with 4 spaces in a row
+    \    this counts as 4 spaces in a row
     \# this is not a tag
     \## this is not an attribute
     \`this isn't a comment\`
@@ -188,7 +190,7 @@ is equivalent to:
     Content
 
 All other escapes are disallowed and should be implicitly unescaped. E.g. `\x` is converted to `x`.
-Note that escapes don't work inside raw data blocks or comments (single-line or multi-line).
+Note that escapes don't work inside raw data blocks or comments (single-line or multi-line). Note that strict parsers are allowed to error on invalid escapes.
 
 Compatibility with XML
 ----------------------
@@ -196,7 +198,7 @@ Compatibility with XML
 It *may* be possible to convert a MDXML document into an XML document if *at least* the following conditions are met:
 
 - The document contains only properly encoded legal Unicode characters
-- The tag names don't contain any of the characters `!"#$%&'()*+,/;<=>?@[\]^`{|}~`, nor a space character, and don't start with -, ., or a numeric digit.
+- The tag names don't contain any of the characters `!"#$%&'()*+,/;<=>?@[\]^\`{|}~`, nor a space character, and don't start with `-`, `.`, or a numeric digit.
 - A single "root" element contains all the other elements.
 
 An example of an XML-compatible MDXML document is available [here](/example.md).
