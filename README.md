@@ -198,7 +198,7 @@ Compatibility with XML
 It *may* be possible to convert a MDXML document into an XML document if *at least* the following conditions are met:
 
 - The document contains only properly encoded legal Unicode characters
-- The tag names don't contain any of the characters `!"#$%&'()*+,/;<=>?@[\]^\`{|}~`, nor a space character, and don't start with `-`, `.`, or a numeric digit.
+- The tag names don't contain any of the characters `!"#$%&'()*+,/;<=>?@[\]^{|}~ `, nor a backtick, and don't start with `-`, `.`, or a numeric digit.
 - A single "root" element contains all the other elements.
 
 An example of an XML-compatible MDXML document is available [here](/example.md).
