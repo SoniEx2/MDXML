@@ -13,28 +13,65 @@ Tags are done with markdown H1 headers. The syntax is a `#` with no free spaces 
 Attributes
 ----------
 
-Attributes are done with markdown H2 headers. The syntax is `##` with no free spaces preceding it.
+Attributes are done with markdown H2 headers. The syntax is `##` with no free spaces preceding it. Attributes MUST come after tags. Attributes MAY come before any content.
 
+    # TagName
     ## Attribute
+    ### Value
+
+or
+
+    # TagName
+    > ##Attribute
+    > ###Value
 
 Attribute Values
 ----------------
 
-Attribute Values are done with markdown H3 headers and must come immediately after an attribute. The syntax is `###` with no free spaces preceding it.
+Attribute Values are done with markdown H3 headers and must come immediately after an attribute. The syntax is `###` with no free spaces preceding it. Attribute values MUST come after attributes. Attribute values MAY come before any content.
 
+    # TagName
     ## Attribute
-    ### AttributeValue
+    ### Value
+
+or
+
+    # TagName
+    > ##Attribute
+    > ###Value
+
+or
+
+    # TagName
+    ##Attribute
+    > ###Value
 
 Namespaces
 ----------
 
-Namespaces are done with markdown H4 and H5 headers. H4 headers specify tag namespace, H5 headers specify attribute namespace. The syntax is `####` with no free spaces preceding it and `#####` with no free spaces preceding it, respectively.
+Namespaces are done with markdown H4 and H5 headers. H4 headers specify tag namespace, H5 headers specify attribute namespace. The syntax is `####` with no free spaces preceding it and `#####` with no free spaces preceding it, respectively. Namespaces MUST come after attributes or tags. Namespaces MAY come before any content.
 
     # Tag
     #### TagNamespace
     ## Attribute
     ### AttributeValue
     ##### AttributeNamespace
+
+or
+
+    # Tag
+    > #### TagNamespace
+    > ## Attribute
+    > ### AttributeValue
+    > ##### AttributeNamespace
+
+or
+
+    # Tag
+    ## Attribute
+    #### TagNamespace
+    > ### AttributeValue
+    > ##### AttributeNamespace
 
 Extension mechanism
 -------------------
