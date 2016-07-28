@@ -36,6 +36,10 @@ Namespaces are done with markdown H4 and H5 headers. H4 headers specify tag name
     ### AttributeValue
     ##### AttributeNamespace
 
+Extension mechanism
+-------------------
+Markdown H6 headers may be used as an extension mechanism. There are no restrictions on the behaviour of `######`.
+
 Raw Data/CDATA
 --------------
 
