@@ -243,3 +243,8 @@ It *may* be possible to convert a MDXML document into an XML document if *at lea
 - A single "root" element contains all the other elements.
 
 An example of an XML-compatible MDXML document is available [here](/example.md).
+
+Reference implementation
+------------------------
+
+At https://bitbucket.org/SoniEx2/mdxml
